@@ -6,40 +6,64 @@ body {
   color: #333;
 }
 
-/* Герой-блок */
+/* ===== Герой-блок ===== */
 header {
   text-align: center;
-  padding: 80px 20px;
-  background-color: #f0f0f0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0)),
+              url("assets/bg.jpg") no-repeat center top;
+  background-size: cover;
+  background-position: center top;
+  color: #FFD700; /* яркий жёлтый текст */
+  padding: 100px 20px;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 header h1 {
-  font-size: 36px;
-  color: #0066cc;
-  margin-bottom: 10px;
-}
-
-header p {
-  font-size: 18px;
+  font-size: 48px;
+  font-weight: 800; /* более жирный */
   margin-bottom: 20px;
+  color: #FFD700; /* текст всегда жёлтый */
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7); /* тень для читаемости */
 }
 
+.header-subtitle {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.header-subtitle span {
+  background-color: rgba(0,0,0,0.3); /* полупрозрачный блок под текстом */
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFD700; /* текст в блоках тоже жёлтый */
+}
+
+/* Кнопка */
 .button {
   display: inline-block;
-  padding: 15px 30px;
-  background-color: #0066cc;
-  color: #fff;
+  background-color: #ff4c4c;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
   text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
+  font-size: 18px;
   transition: background 0.3s;
 }
 
 .button:hover {
-  background-color: #004a99;
+  background-color: #d93636;
 }
 
-/* Блок с услугами */
+/* ===== Блок с услугами ===== */
 #services {
   padding: 60px 20px;
   text-align: center;
@@ -84,8 +108,28 @@ header p {
   margin: 8px 0;
 }
 
-/* Адаптив для мобильных */
+/* ===== Адаптивность ===== */
 @media (max-width: 768px) {
+  header {
+    padding: 60px 10px;
+    min-height: 350px;
+    background-position: center top;
+  }
+
+  header h1 {
+    font-size: 36px;
+  }
+
+  .header-subtitle span {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
   #services .cards-container {
     flex-direction: column;
     align-items: center;
