@@ -34,11 +34,12 @@ nav a:hover {
   color: #ff4c4c;
 }
 
-/* Шапка */
-header {
+/* Шапка с параллаксом */
+header#hero {
   text-align: center;
   background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0)),
               url("assets/bg.jpg") no-repeat center top;
+  background-attachment: fixed;
   background-size: cover;
   background-position: center top;
   padding: 120px 20px;
@@ -75,7 +76,7 @@ header h1 {
   color: #1e3a8a;
 }
 
-/* Кнопка */
+/* Кнопки */
 .button {
   display: inline-block;
   background-color: #ff4c4c;
@@ -102,12 +103,6 @@ header h1 {
 #services h2 {
   font-size: 28px;
   margin-bottom: 20px;
-}
-
-#services .section-desc {
-  font-size: 18px;
-  margin-bottom: 40px;
-  color: #444;
 }
 
 .cards-container {
@@ -180,9 +175,10 @@ header h1 {
   transform: translateY(-5px);
 }
 
-.advantage h3 {
+.advantage .adv-title {
+  font-weight: 700;
   font-size: 20px;
-  color: #0066cc;
+  color: #1e3a8a;
   margin-bottom: 10px;
 }
 
