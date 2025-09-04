@@ -16,6 +16,9 @@ nav {
   background-color: #ffffff;
   padding: 10px 0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav a {
@@ -36,7 +39,6 @@ header {
   background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0)),
               url("assets/bg.jpg") no-repeat center top;
   background-size: cover;
-  background-position: center top;
   padding: 120px 20px;
   min-height: 450px;
   display: flex;
@@ -68,7 +70,6 @@ header h1 {
   font-size: 16px;
   font-weight: 600;
   color: #1e3a8a;
-  text-shadow: none;
 }
 
 /* Кнопка */
@@ -97,7 +98,13 @@ header h1 {
 
 #services h2 {
   font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.services-intro {
+  font-size: 18px;
   margin-bottom: 40px;
+  color: #444;
 }
 
 .cards-container {
@@ -115,8 +122,11 @@ header h1 {
   border: none;
   background-color: #ffffff;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .service-card:hover {
@@ -134,18 +144,25 @@ header h1 {
 .service-card p {
   margin: 10px 0;
   font-size: 16px;
+  flex-grow: 1;
+}
+
+.card-footer {
+  margin-top: auto;
 }
 
 /* Блок преимуществ */
 #advantages {
   padding: 60px 20px;
   text-align: center;
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, #fff8f0, #ffffff);
 }
 
 #advantages h2 {
-  font-size: 28px;
-  margin-bottom: 40px;
+  font-size: 32px;
+  margin-bottom: 50px;
+  font-weight: 700;
+  color: #1e3a8a;
 }
 
 .advantages-container {
@@ -156,25 +173,33 @@ header h1 {
 }
 
 .advantage {
-  max-width: 200px;
+  max-width: 280px;
+  padding: 25px 20px;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
   text-align: center;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .advantage:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, #ffffff, #f0f8ff);
 }
 
-.advantage img {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 15px;
+.advantage h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #ff4c4c;
 }
 
 .advantage p {
   font-size: 16px;
-  font-weight: 600;
-  color: #1e3a8a;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.5;
 }
 
 /* Адаптивность */
