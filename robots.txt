@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://54profi-nsk.netlify.app/sitemap.xml
