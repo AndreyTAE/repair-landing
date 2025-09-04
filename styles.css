@@ -4,6 +4,7 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.5;
   color: #333;
+  background: #fdfdfd;
 }
 
 html {
@@ -39,12 +40,14 @@ header {
   background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0)),
               url("assets/bg.jpg") no-repeat center top;
   background-size: cover;
+  background-position: center top;
   padding: 120px 20px;
   min-height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 header h1 {
@@ -93,7 +96,7 @@ header h1 {
 #services {
   padding: 60px 20px;
   text-align: center;
-  background-color: #ffffff;
+  background: linear-gradient(135deg, #f0f8ff 30%, #ffffff 100%);
 }
 
 #services h2 {
@@ -101,7 +104,7 @@ header h1 {
   margin-bottom: 20px;
 }
 
-.services-intro {
+#services .section-desc {
   font-size: 18px;
   margin-bottom: 40px;
   color: #444;
@@ -119,14 +122,13 @@ header h1 {
   max-width: 300px;
   padding: 25px;
   border-radius: 12px;
-  border: none;
   background-color: #ffffff;
   text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .service-card:hover {
@@ -144,25 +146,18 @@ header h1 {
 .service-card p {
   margin: 10px 0;
   font-size: 16px;
-  flex-grow: 1;
-}
-
-.card-footer {
-  margin-top: auto;
 }
 
 /* Блок преимуществ */
 #advantages {
   padding: 60px 20px;
   text-align: center;
-  background: linear-gradient(135deg, #fff8f0, #ffffff);
+  background: linear-gradient(135deg, #ffffff 30%, #f9f9f9 100%);
 }
 
 #advantages h2 {
-  font-size: 32px;
-  margin-bottom: 50px;
-  font-weight: 700;
-  color: #1e3a8a;
+  font-size: 28px;
+  margin-bottom: 40px;
 }
 
 .advantages-container {
@@ -173,33 +168,60 @@ header h1 {
 }
 
 .advantage {
-  max-width: 280px;
-  padding: 25px 20px;
-  border-radius: 15px;
+  max-width: 250px;
+  padding: 20px;
+  border-radius: 12px;
   background: #ffffff;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
 }
 
 .advantage:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-  background: linear-gradient(135deg, #ffffff, #f0f8ff);
+  transform: translateY(-5px);
 }
 
 .advantage h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: #ff4c4c;
+  font-size: 20px;
+  color: #0066cc;
+  margin-bottom: 10px;
 }
 
 .advantage p {
   font-size: 16px;
-  font-weight: 500;
-  color: #333;
-  line-height: 1.5;
+  color: #444;
+}
+
+/* Плавающая кнопка звонка */
+.call-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff4c4c;
+  color: white;
+  font-size: 28px;
+  padding: 15px 20px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-decoration: none;
+  z-index: 1000;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.call-button:hover {
+  transform: scale(1.1);
+  background: #d93636;
+}
+
+/* Анимации при скролле */
+.animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.animate.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Адаптивность */
@@ -219,11 +241,7 @@ header h1 {
     font-size: 16px;
     padding: 10px 20px;
   }
-  .cards-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .advantages-container {
+  .cards-container, .advantages-container {
     flex-direction: column;
     align-items: center;
   }
