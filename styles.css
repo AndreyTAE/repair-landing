@@ -105,6 +105,12 @@ header h1 {
   margin-bottom: 20px;
 }
 
+.section-desc {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #444;
+}
+
 .cards-container {
   display: flex;
   justify-content: center;
@@ -222,7 +228,7 @@ header h1 {
 
 /* Адаптивность */
 @media (max-width: 768px) {
-  header {
+  header#hero {
     padding: 80px 10px;
     min-height: 350px;
   }
