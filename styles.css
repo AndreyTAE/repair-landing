@@ -6,15 +6,38 @@ body {
   color: #333;
 }
 
-/* ===== Герой-блок ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Навигация */
+nav {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #1e3a8a;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ff4c4c;
+}
+
+/* Шапка */
 header {
   text-align: center;
   background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0)),
               url("assets/bg.jpg") no-repeat center top;
   background-size: cover;
   background-position: center top;
-  color: #FFD700; /* яркий жёлтый текст */
-  padding: 100px 20px;
+  padding: 120px 20px;
   min-height: 450px;
   display: flex;
   flex-direction: column;
@@ -24,10 +47,10 @@ header {
 
 header h1 {
   font-size: 48px;
-  font-weight: 800; /* более жирный */
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
   margin-bottom: 20px;
-  color: #FFD700; /* текст всегда жёлтый */
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.7); /* тень для читаемости */
 }
 
 .header-subtitle {
@@ -39,12 +62,13 @@ header h1 {
 }
 
 .header-subtitle span {
-  background-color: rgba(0,0,0,0.3); /* полупрозрачный блок под текстом */
-  padding: 8px 15px;
+  background-color: white;
+  padding: 8px 20px;
   border-radius: 20px;
   font-size: 16px;
   font-weight: 600;
-  color: #FFD700; /* текст в блоках тоже жёлтый */
+  color: #1e3a8a;
+  text-shadow: none;
 }
 
 /* Кнопка */
@@ -52,10 +76,11 @@ header h1 {
   display: inline-block;
   background-color: #ff4c4c;
   color: white;
-  padding: 12px 25px;
+  padding: 14px 28px;
   border-radius: 8px;
   text-decoration: none;
   font-size: 18px;
+  font-weight: 600;
   transition: background 0.3s;
 }
 
@@ -63,7 +88,7 @@ header h1 {
   background-color: #d93636;
 }
 
-/* ===== Блок с услугами ===== */
+/* Блок услуг */
 #services {
   padding: 60px 20px;
   text-align: center;
@@ -75,62 +100,105 @@ header h1 {
   margin-bottom: 40px;
 }
 
-/* Контейнер для карточек */
-#services .cards-container {
+.cards-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-/* Карточки услуг */
 .service-card {
   flex: 1 1 280px;
   max-width: 300px;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 12px;
+  border: none;
+  background-color: #ffffff;
   text-align: center;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .service-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .service-card h3 {
   color: #0066cc;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .service-card p {
-  margin: 8px 0;
+  margin: 10px 0;
+  font-size: 16px;
 }
 
-/* ===== Адаптивность ===== */
+/* Блок преимуществ */
+#advantages {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+#advantages h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.advantages-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.advantage {
+  max-width: 200px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.advantage:hover {
+  transform: translateY(-5px);
+}
+
+.advantage img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+.advantage p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+/* Адаптивность */
 @media (max-width: 768px) {
   header {
-    padding: 60px 10px;
+    padding: 80px 10px;
     min-height: 350px;
-    background-position: center top;
   }
-
   header h1 {
     font-size: 36px;
   }
-
   .header-subtitle span {
     font-size: 14px;
-    padding: 6px 12px;
+    padding: 6px 15px;
   }
-
   .button {
     font-size: 16px;
     padding: 10px 20px;
   }
-
-  #services .cards-container {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .advantages-container {
     flex-direction: column;
     align-items: center;
   }
